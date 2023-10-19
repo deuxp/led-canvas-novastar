@@ -12,8 +12,12 @@ const squareSize = 64;
 const rows = canvas.height / squareSize;
 const cols = canvas.width / squareSize;
 
-for (let row = 0; row < rows; row++) {
-  for (let col = 0; col < cols; col++) {
+for (let col = 0; col < cols; col++) {
+  for (
+    let row = col % 2 === 0 ? 0 : rows - 1;
+    col % 2 === 0 ? row < rows : row >= 0;
+    col % 2 === 0 ? row++ : row--
+  ) {
     // Set a random fill color
     ctx.fillStyle = randomColor();
     // Draw a filled rectangle (the square)
@@ -39,7 +43,7 @@ for (let row = 0; row < rows; row++) {
 
 // After the grid has been drawn...
 
-// const link = document.createElement("a");
-// link.download = "grid_image.png";
-// link.href = canvas.toDataURL("image/png");
-// link.click();
+const link = document.createElement("a");
+link.download = "grid_image.png";
+link.href = canvas.toDataURL("image/png");
+link.click();
