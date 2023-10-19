@@ -1,0 +1,7 @@
+{
+  "name": "gem-1366x768",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gottfried Kleinberger <friedi.frieds@gmail.com>",
+  "license": "MIT"
+}
